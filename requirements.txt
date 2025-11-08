@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+langserve
+langchain
+langchain-core
+langchain-community
+pydantic
+langchain-nvidia-ai-endpoints
+langchain-mcp-adapters
+langgraph
