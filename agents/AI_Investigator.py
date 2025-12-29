@@ -21,13 +21,13 @@ async def create_investigation_chain():
     Creates and initializes the ReAct agent for security investigation.
     This function is async because it needs to get tools from the client.
     """
-    MCP_API_KEY = os.environ.get("MCP_API_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzYxNzY2Njc4LCJpc3MiOiJtY3BnYXRld2F5IiwiYXVkIjoibWNwZ2F0ZXdheS1hcGkiLCJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImV4cCI6MTc2MjM3MTQ3OH0.5PQwXmQ7cvti923VOnBuB4gbSg0Jym2IKKFjG3Cw-L0")
+    MCP_API_KEY = os.environ.get("MCP_API_KEY", "xxxxxx")
 
     mcp_client = MultiServerMCPClient(
         {
             "mcp_server": {
                 "transport": "streamable_http",
-                "url": "http://3.28.242.189:4444/servers/55b450a0ac8b4cfa9f620eadda52c05b/mcp",
+                "url": "http://xxxxx:4444/servers/xxxxxx/mcp",
                 "headers": {"Authorization": f"Bearer {MCP_API_KEY}"},
             }
         }
@@ -36,7 +36,7 @@ async def create_investigation_chain():
     tools = await mcp_client.get_tools()
 
     llm = ChatNVIDIA(
-        base_url="http://3.29.243.7:8000/v1",
+        base_url="http://xxxxx:8000/v1",
         model="meta/llama-3.1-8b-instruct",
     )
     # Create the ReAct agent executor with the LLM and tools
