@@ -18,7 +18,7 @@ def create_validation_chain():
     This is a simpler chain that just uses an LLM to classify a report.
     """
     llm = ChatNVIDIA(
-        base_url="http://3.29.243.7:8000/v1",
+        base_url="http://xxxxx:8000/v1",
         model="meta/llama-3.1-8b-instruct",
     )
 
